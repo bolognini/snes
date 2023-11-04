@@ -1,0 +1,19 @@
+{
+  "name": "snes",
+  "version": "0.0.1",
+  "dependencies": {
+    "esbuild": "^0.19.5",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "build": "esbuild server.jsx --bundle --outfile=out.js --platform=node",
+    "build:watch": "esbuild server.jsx --bundle --watch --outfile=out.js --platform=node",
+    "start": "yarn build && node ./out",
+    "dev": "yarn build && nodemon -e js,jsx ./out.js "
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
