@@ -29,10 +29,12 @@ yarn
 
 Next, please open a new terminal window. One window will listen to any changes made on JSX files that needs to be compiled, using ESBuild `--watch` listener, and the other window will listen to any changes made on the server, using the nodemon package.
 
+#### First Terminal Instance
 ```shell
 yarn build:watch
 ```
 
+#### Second Terminal Instance
 ```shell
 yarn dev
 ```
