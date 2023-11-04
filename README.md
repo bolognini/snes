@@ -1,7 +1,7 @@
 # SNES 👾
 
 <p align="center"><img src="assets/icon.png" alt="SNES console" width="60"></p>
-<p align="center">&laquo;<b>A Fullstack project to render SNES box cover arts.</b>&raquo;</p>
+<p align="center">&laquo;<b>A Fullstack project to render SNES box cover arts</b>&raquo;</p>
 <p align="center">SNES is a very simple Fullstack project, including a Backend for Frontend API and a React application that lists SNES box cover arts</p>
 <br />
 <br />
@@ -29,10 +29,12 @@ yarn
 
 Next, please open a new terminal window. One window will listen to any changes made on JSX files that needs to be compiled, using ESBuild `--watch` listener, and the other window will listen to any changes made on the server, using the nodemon package.
 
+#### First Terminal Instance
 ```shell
 yarn build:watch
 ```
 
+#### Second Terminal Instance
 ```shell
 yarn dev
 ```
