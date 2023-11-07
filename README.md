@@ -11,6 +11,7 @@
 SNES was created for study purposes - The objective is using it as a simple project example to use in a mentorship I'm having in my current workplace.
 
 ## Project
+
 SNES has just X endpoints to receive data.
 
 **GET** - `/TBD/:TBD` <br/>
@@ -30,11 +31,13 @@ yarn
 Next, please open a new terminal window. One window will listen to any changes made on JSX files that needs to be compiled, using ESBuild `--watch` listener, and the other window will listen to any changes made on the server, using the nodemon package.
 
 #### First Terminal Instance
+
 ```shell
 yarn build:watch
 ```
 
 #### Second Terminal Instance
+
 ```shell
 yarn dev
 ```
@@ -43,6 +46,6 @@ With that, in a few seconds the server can be accessed by Insomnia, Postman, cUR
 
 ### Built With
 
-* [ESBuild](https://esbuild.github.io/) - An extremely fast bundler for the web
-* [Nodemon](https://nodemon.io/) - A monitor for any changes in the source code
-* [Express](https://expressjs.com/) - Web framework for Node.js
+- [ESBuild](https://esbuild.github.io/) - An extremely fast bundler for the web
+- [Nodemon](https://nodemon.io/) - A monitor for any changes in the source code
+- [Express](https://expressjs.com/) - Web framework for Node.js

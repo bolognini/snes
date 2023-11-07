@@ -1707,9 +1707,9 @@ var require_react_development = __commonJS({
                 var error$1 = void 0;
                 try {
                   if (typeof typeSpecs[typeSpecName] !== "function") {
-                    var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                    err.name = "Invariant Violation";
-                    throw err;
+                    var err2 = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                    err2.name = "Invariant Violation";
+                    throw err2;
                   }
                   error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
                 } catch (ex) {
@@ -5665,10 +5665,10 @@ var require_react_dom_server_legacy_node_development = __commonJS({
     if (process.env.NODE_ENV !== "production") {
       (function() {
         "use strict";
-        var React3 = require_react();
+        var React4 = require_react();
         var stream = require("stream");
         var ReactVersion = "18.2.0";
-        var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn(format) {
           {
             {
@@ -7564,7 +7564,7 @@ var require_react_dom_server_legacy_node_development = __commonJS({
         }
         function flattenOptionChildren(children) {
           var content = "";
-          React3.Children.forEach(children, function(child) {
+          React4.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -8799,9 +8799,9 @@ var require_react_dom_server_legacy_node_development = __commonJS({
                 var error$1 = void 0;
                 try {
                   if (typeof typeSpecs[typeSpecName] !== "function") {
-                    var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                    err.name = "Invariant Violation";
-                    throw err;
+                    var err2 = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                    err2.name = "Invariant Violation";
+                    throw err2;
                   }
                   error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
                 } catch (ex) {
@@ -11006,9 +11006,9 @@ var require_react_dom_server_legacy_node_development = __commonJS({
             return _this;
           }
           var _proto = ReactMarkupReadableStream2.prototype;
-          _proto._destroy = function _destroy(err, callback) {
+          _proto._destroy = function _destroy(err2, callback) {
             abort(this.request);
-            callback(err);
+            callback(err2);
           };
           _proto._read = function _read(size) {
             if (this.startedFlowing) {
@@ -11062,10 +11062,10 @@ var require_react_dom_server_node_development = __commonJS({
     if (process.env.NODE_ENV !== "production") {
       (function() {
         "use strict";
-        var React3 = require_react();
+        var React4 = require_react();
         var util = require("util");
         var ReactVersion = "18.2.0";
-        var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn(format) {
           {
             {
@@ -13058,7 +13058,7 @@ var require_react_dom_server_node_development = __commonJS({
         }
         function flattenOptionChildren(children) {
           var content = "";
-          React3.Children.forEach(children, function(child) {
+          React4.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -14229,9 +14229,9 @@ var require_react_dom_server_node_development = __commonJS({
                 var error$1 = void 0;
                 try {
                   if (typeof typeSpecs[typeSpecName] !== "function") {
-                    var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                    err.name = "Invariant Violation";
-                    throw err;
+                    var err2 = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                    err2.name = "Invariant Violation";
+                    throw err2;
                   }
                   error$1 = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
                 } catch (ex) {
@@ -16592,8 +16592,8 @@ var require_depd = __commonJS({
         msg = callSite === depSite || !callSite.name ? defaultMessage(depSite) : defaultMessage(callSite);
       }
       if (haslisteners) {
-        var err = DeprecationError(this._namespace, msg, stack.slice(i));
-        process.emit("deprecation", err);
+        var err2 = DeprecationError(this._namespace, msg, stack.slice(i));
+        process.emit("deprecation", err2);
         return;
       }
       var format = process.stderr.isTTY ? formatColor : formatPlain;
@@ -17199,7 +17199,7 @@ var require_http_errors = __commonJS({
       return Number(String(status).charAt(0) + "00");
     }
     function createError() {
-      var err;
+      var err2;
       var msg;
       var status = 500;
       var props = {};
@@ -17207,8 +17207,8 @@ var require_http_errors = __commonJS({
         var arg = arguments[i];
         var type = typeof arg;
         if (type === "object" && arg instanceof Error) {
-          err = arg;
-          status = err.status || err.statusCode || status;
+          err2 = arg;
+          status = err2.status || err2.statusCode || status;
         } else if (type === "number" && i === 0) {
           status = arg;
         } else if (type === "string") {
@@ -17226,20 +17226,20 @@ var require_http_errors = __commonJS({
         status = 500;
       }
       var HttpError = createError[status] || createError[codeClass(status)];
-      if (!err) {
-        err = HttpError ? new HttpError(msg) : new Error(msg || statuses.message[status]);
-        Error.captureStackTrace(err, createError);
+      if (!err2) {
+        err2 = HttpError ? new HttpError(msg) : new Error(msg || statuses.message[status]);
+        Error.captureStackTrace(err2, createError);
       }
-      if (!HttpError || !(err instanceof HttpError) || err.status !== status) {
-        err.expose = status < 500;
-        err.status = err.statusCode = status;
+      if (!HttpError || !(err2 instanceof HttpError) || err2.status !== status) {
+        err2.expose = status < 500;
+        err2.status = err2.statusCode = status;
       }
       for (var key in props) {
         if (key !== "status" && key !== "statusCode") {
-          err[key] = props[key];
+          err2[key] = props[key];
         }
       }
-      return err;
+      return err2;
     }
     function createHttpErrorConstructor() {
       function HttpError() {
@@ -17252,22 +17252,22 @@ var require_http_errors = __commonJS({
       var className = toClassName(name);
       function ClientError(message) {
         var msg = message != null ? message : statuses.message[code];
-        var err = new Error(msg);
-        Error.captureStackTrace(err, ClientError);
-        setPrototypeOf(err, ClientError.prototype);
-        Object.defineProperty(err, "message", {
+        var err2 = new Error(msg);
+        Error.captureStackTrace(err2, ClientError);
+        setPrototypeOf(err2, ClientError.prototype);
+        Object.defineProperty(err2, "message", {
           enumerable: true,
           configurable: true,
           value: msg,
           writable: true
         });
-        Object.defineProperty(err, "name", {
+        Object.defineProperty(err2, "name", {
           enumerable: false,
           configurable: true,
           value: className,
           writable: true
         });
-        return err;
+        return err2;
       }
       inherits(ClientError, HttpError);
       nameFunc(ClientError, className);
@@ -17291,22 +17291,22 @@ var require_http_errors = __commonJS({
       var className = toClassName(name);
       function ServerError(message) {
         var msg = message != null ? message : statuses.message[code];
-        var err = new Error(msg);
-        Error.captureStackTrace(err, ServerError);
-        setPrototypeOf(err, ServerError.prototype);
-        Object.defineProperty(err, "message", {
+        var err2 = new Error(msg);
+        Error.captureStackTrace(err2, ServerError);
+        setPrototypeOf(err2, ServerError.prototype);
+        Object.defineProperty(err2, "message", {
           enumerable: true,
           configurable: true,
           value: msg,
           writable: true
         });
-        Object.defineProperty(err, "name", {
+        Object.defineProperty(err2, "name", {
           enumerable: false,
           configurable: true,
           value: className,
           writable: true
         });
-        return err;
+        return err2;
       }
       inherits(ServerError, HttpError);
       nameFunc(ServerError, className);
@@ -17588,8 +17588,8 @@ var require_browser = __commonJS({
     exports.formatters.j = function(v) {
       try {
         return JSON.stringify(v);
-      } catch (err) {
-        return "[UnexpectedJSONParseError]: " + err.message;
+      } catch (err2) {
+        return "[UnexpectedJSONParseError]: " + err2.message;
       }
     };
     function formatArgs(args) {
@@ -17732,8 +17732,8 @@ var require_node = __commonJS({
           }
           break;
         case "FILE":
-          var fs = require("fs");
-          stream2 = new fs.SyncWriteStream(fd2, { autoClose: false });
+          var fs2 = require("fs");
+          stream2 = new fs2.SyncWriteStream(fd2, { autoClose: false });
           stream2._type = "fs";
           break;
         case "PIPE":
@@ -21404,9 +21404,9 @@ var require_raw_body = __commonJS({
         return readStream(stream, encoding, length, limit, wrap(done));
       }
       return new Promise(function executor(resolve, reject) {
-        readStream(stream, encoding, length, limit, function onRead(err, buf) {
-          if (err)
-            return reject(err);
+        readStream(stream, encoding, length, limit, function onRead(err2, buf) {
+          if (err2)
+            return reject(err2);
           resolve(buf);
         });
       });
@@ -21443,8 +21443,8 @@ var require_raw_body = __commonJS({
       var decoder;
       try {
         decoder = getDecoder(encoding);
-      } catch (err) {
-        return done(err);
+      } catch (err2) {
+        return done(err2);
       }
       var buffer = decoder ? "" : [];
       stream.on("aborted", onAborted);
@@ -21499,11 +21499,11 @@ var require_raw_body = __commonJS({
           buffer.push(chunk);
         }
       }
-      function onEnd(err) {
+      function onEnd(err2) {
         if (complete)
           return;
-        if (err)
-          return done(err);
+        if (err2)
+          return done(err2);
         if (length !== null && received !== length) {
           done(createError(400, "request size did not match content length", {
             expected: length,
@@ -21591,11 +21591,11 @@ var require_ee_first = __commonJS({
       return function onevent(arg1) {
         var args = new Array(arguments.length);
         var ee = this;
-        var err = event === "error" ? arg1 : null;
+        var err2 = event === "error" ? arg1 : null;
         for (var i = 0; i < args.length; i++) {
           args[i] = arguments[i];
         }
-        done(err, ee, event, args);
+        done(err2, ee, event, args);
       };
     }
   }
@@ -21667,7 +21667,7 @@ var require_on_finished = __commonJS({
       attached.queue.push(listener);
     }
     function createListener(msg) {
-      function listener(err) {
+      function listener(err2) {
         if (msg.__onFinished === listener)
           msg.__onFinished = null;
         if (!listener.queue)
@@ -21675,7 +21675,7 @@ var require_on_finished = __commonJS({
         var queue = listener.queue;
         listener.queue = null;
         for (var i = 0; i < queue.length; i++) {
-          queue[i](err, msg);
+          queue[i](err2, msg);
         }
       }
       listener.queue = [];
@@ -21733,8 +21733,8 @@ var require_read = __commonJS({
         stream = contentstream(req, debug, opts.inflate);
         length = stream.length;
         stream.length = void 0;
-      } catch (err) {
-        return next(err);
+      } catch (err2) {
+        return next(err2);
       }
       opts.length = length;
       opts.encoding = verify ? null : encoding;
@@ -21769,10 +21769,10 @@ var require_read = __commonJS({
           try {
             debug("verify body");
             verify(req, res, body, encoding);
-          } catch (err) {
-            next(createError(403, err, {
+          } catch (err2) {
+            next(createError(403, err2, {
               body,
-              type: err.type || "entity.verify.failed"
+              type: err2.type || "entity.verify.failed"
             }));
             return;
           }
@@ -21782,10 +21782,10 @@ var require_read = __commonJS({
           debug("parse body");
           str = typeof body !== "string" && encoding !== null ? iconv.decode(body, encoding) : body;
           req.body = parse(str);
-        } catch (err) {
-          next(createError(400, err, {
+        } catch (err2) {
+          next(createError(400, err2, {
             body: str,
-            type: err.type || "entity.parse.failed"
+            type: err2.type || "entity.parse.failed"
           }));
           return;
         }
@@ -30549,11 +30549,11 @@ var require_mime_types = __commonJS({
       }
       return exts[0];
     }
-    function lookup(path) {
-      if (!path || typeof path !== "string") {
+    function lookup(path2) {
+      if (!path2 || typeof path2 !== "string") {
         return false;
       }
-      var extension2 = extname("x." + path).toLowerCase().substr(1);
+      var extension2 = extname("x." + path2).toLowerCase().substr(1);
       if (!extension2) {
         return false;
       }
@@ -30682,7 +30682,7 @@ var require_type_is = __commonJS({
       }
       try {
         return normalizeType(value);
-      } catch (err) {
+      } catch (err2) {
         return null;
       }
     }
@@ -33171,9 +33171,9 @@ var require_body_parser = __commonJS({
       var _urlencoded = exports.urlencoded(opts);
       var _json = exports.json(opts);
       return function bodyParser2(req, res, next) {
-        _json(req, res, function(err) {
-          if (err)
-            return next(err);
+        _json(req, res, function(err2) {
+          if (err2)
+            return next(err2);
           _urlencoded(req, res, next);
         });
       };
@@ -33400,29 +33400,29 @@ var require_finalhandler = __commonJS({
       var opts = options || {};
       var env = opts.env || process.env.NODE_ENV || "development";
       var onerror = opts.onerror;
-      return function(err) {
+      return function(err2) {
         var headers;
         var msg;
         var status;
-        if (!err && headersSent(res)) {
+        if (!err2 && headersSent(res)) {
           debug("cannot 404 after headers sent");
           return;
         }
-        if (err) {
-          status = getErrorStatusCode(err);
+        if (err2) {
+          status = getErrorStatusCode(err2);
           if (status === void 0) {
             status = getResponseStatusCode(res);
           } else {
-            headers = getErrorHeaders(err);
+            headers = getErrorHeaders(err2);
           }
-          msg = getErrorMessage(err, status, env);
+          msg = getErrorMessage(err2, status, env);
         } else {
           status = 404;
           msg = "Cannot " + req.method + " " + encodeUrl(getResourceName(req));
         }
         debug("default %s", status);
-        if (err && onerror) {
-          defer(onerror, err, req, res);
+        if (err2 && onerror) {
+          defer(onerror, err2, req, res);
         }
         if (headersSent(res)) {
           debug("cannot %d after headers sent", status);
@@ -33432,34 +33432,34 @@ var require_finalhandler = __commonJS({
         send(req, res, status, headers, msg);
       };
     }
-    function getErrorHeaders(err) {
-      if (!err.headers || typeof err.headers !== "object") {
+    function getErrorHeaders(err2) {
+      if (!err2.headers || typeof err2.headers !== "object") {
         return void 0;
       }
       var headers = /* @__PURE__ */ Object.create(null);
-      var keys = Object.keys(err.headers);
+      var keys = Object.keys(err2.headers);
       for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
-        headers[key] = err.headers[key];
+        headers[key] = err2.headers[key];
       }
       return headers;
     }
-    function getErrorMessage(err, status, env) {
+    function getErrorMessage(err2, status, env) {
       var msg;
       if (env !== "production") {
-        msg = err.stack;
-        if (!msg && typeof err.toString === "function") {
-          msg = err.toString();
+        msg = err2.stack;
+        if (!msg && typeof err2.toString === "function") {
+          msg = err2.toString();
         }
       }
       return msg || statuses.message[status];
     }
-    function getErrorStatusCode(err) {
-      if (typeof err.status === "number" && err.status >= 400 && err.status < 600) {
-        return err.status;
+    function getErrorStatusCode(err2) {
+      if (typeof err2.status === "number" && err2.status >= 400 && err2.status < 600) {
+        return err2.status;
       }
-      if (typeof err.statusCode === "number" && err.statusCode >= 400 && err.statusCode < 600) {
-        return err.statusCode;
+      if (typeof err2.statusCode === "number" && err2.statusCode >= 400 && err2.statusCode < 600) {
+        return err2.statusCode;
       }
       return void 0;
     }
@@ -33561,7 +33561,7 @@ var require_path_to_regexp = __commonJS({
   "node_modules/path-to-regexp/index.js"(exports, module2) {
     module2.exports = pathtoRegexp;
     var MATCHING_GROUP_REGEXP = /\((?!\?)/g;
-    function pathtoRegexp(path, keys, options) {
+    function pathtoRegexp(path2, keys, options) {
       options = options || {};
       keys = keys || [];
       var strict = options.strict;
@@ -33572,23 +33572,23 @@ var require_path_to_regexp = __commonJS({
       var i = 0;
       var name = 0;
       var m;
-      if (path instanceof RegExp) {
-        while (m = MATCHING_GROUP_REGEXP.exec(path.source)) {
+      if (path2 instanceof RegExp) {
+        while (m = MATCHING_GROUP_REGEXP.exec(path2.source)) {
           keys.push({
             name: name++,
             optional: false,
             offset: m.index
           });
         }
-        return path;
+        return path2;
       }
-      if (Array.isArray(path)) {
-        path = path.map(function(value) {
+      if (Array.isArray(path2)) {
+        path2 = path2.map(function(value) {
           return pathtoRegexp(value, keys, options).source;
         });
-        return new RegExp("(?:" + path.join("|") + ")", flags);
+        return new RegExp("(?:" + path2.join("|") + ")", flags);
       }
-      path = ("^" + path + (strict ? "" : path[path.length - 1] === "/" ? "?" : "/?")).replace(/\/\(/g, "/(?:").replace(/([\/\.])/g, "\\$1").replace(/(\\\/)?(\\\.)?:(\w+)(\(.*?\))?(\*)?(\?)?/g, function(match, slash, format, key, capture, star, optional, offset) {
+      path2 = ("^" + path2 + (strict ? "" : path2[path2.length - 1] === "/" ? "?" : "/?")).replace(/\/\(/g, "/(?:").replace(/([\/\.])/g, "\\$1").replace(/(\\\/)?(\\\.)?:(\w+)(\(.*?\))?(\*)?(\?)?/g, function(match, slash, format, key, capture, star, optional, offset) {
         slash = slash || "";
         format = format || "";
         capture = capture || "([^\\/" + format + "]+?)";
@@ -33608,10 +33608,10 @@ var require_path_to_regexp = __commonJS({
         }
         return "(.*)";
       });
-      while (m = MATCHING_GROUP_REGEXP.exec(path)) {
+      while (m = MATCHING_GROUP_REGEXP.exec(path2)) {
         var escapeCount = 0;
         var index = m.index;
-        while (path.charAt(--index) === "\\") {
+        while (path2.charAt(--index) === "\\") {
           escapeCount++;
         }
         if (escapeCount % 2 === 1) {
@@ -33627,8 +33627,8 @@ var require_path_to_regexp = __commonJS({
         }
         i++;
       }
-      path += end ? "$" : path[path.length - 1] === "/" ? "" : "(?=\\/|$)";
-      return new RegExp(path, flags);
+      path2 += end ? "$" : path2[path2.length - 1] === "/" ? "" : "(?=\\/|$)";
+      return new RegExp(path2, flags);
     }
   }
 });
@@ -33641,19 +33641,19 @@ var require_layer = __commonJS({
     var debug = require_src()("express:router:layer");
     var hasOwnProperty = Object.prototype.hasOwnProperty;
     module2.exports = Layer;
-    function Layer(path, options, fn) {
+    function Layer(path2, options, fn) {
       if (!(this instanceof Layer)) {
-        return new Layer(path, options, fn);
+        return new Layer(path2, options, fn);
       }
-      debug("new %o", path);
+      debug("new %o", path2);
       var opts = options || {};
       this.handle = fn;
       this.name = fn.name || "<anonymous>";
       this.params = void 0;
       this.path = void 0;
-      this.regexp = pathRegexp(path, this.keys = [], opts);
-      this.regexp.fast_star = path === "*";
-      this.regexp.fast_slash = path === "/" && opts.end === false;
+      this.regexp = pathRegexp(path2, this.keys = [], opts);
+      this.regexp.fast_star = path2 === "*";
+      this.regexp.fast_slash = path2 === "/" && opts.end === false;
     }
     Layer.prototype.handle_error = function handle_error(error, req, res, next) {
       var fn = this.handle;
@@ -33662,8 +33662,8 @@ var require_layer = __commonJS({
       }
       try {
         fn(error, req, res, next);
-      } catch (err) {
-        next(err);
+      } catch (err2) {
+        next(err2);
       }
     };
     Layer.prototype.handle_request = function handle(req, res, next) {
@@ -33673,24 +33673,24 @@ var require_layer = __commonJS({
       }
       try {
         fn(req, res, next);
-      } catch (err) {
-        next(err);
+      } catch (err2) {
+        next(err2);
       }
     };
-    Layer.prototype.match = function match(path) {
+    Layer.prototype.match = function match(path2) {
       var match2;
-      if (path != null) {
+      if (path2 != null) {
         if (this.regexp.fast_slash) {
           this.params = {};
           this.path = "";
           return true;
         }
         if (this.regexp.fast_star) {
-          this.params = { "0": decode_param(path) };
-          this.path = path;
+          this.params = { "0": decode_param(path2) };
+          this.path = path2;
           return true;
         }
-        match2 = this.regexp.exec(path);
+        match2 = this.regexp.exec(path2);
       }
       if (!match2) {
         this.params = void 0;
@@ -33717,12 +33717,12 @@ var require_layer = __commonJS({
       }
       try {
         return decodeURIComponent(val);
-      } catch (err) {
-        if (err instanceof URIError) {
-          err.message = "Failed to decode param '" + val + "'";
-          err.status = err.statusCode = 400;
+      } catch (err2) {
+        if (err2 instanceof URIError) {
+          err2.message = "Failed to decode param '" + val + "'";
+          err2.status = err2.statusCode = 400;
         }
-        throw err;
+        throw err2;
       }
     }
   }
@@ -33783,10 +33783,10 @@ var require_route = __commonJS({
     var slice = Array.prototype.slice;
     var toString = Object.prototype.toString;
     module2.exports = Route;
-    function Route(path) {
-      this.path = path;
+    function Route(path2) {
+      this.path = path2;
       this.stack = [];
-      debug("new %o", path);
+      debug("new %o", path2);
       this.methods = {};
     }
     Route.prototype._handles_method = function _handles_method(method) {
@@ -33822,24 +33822,24 @@ var require_route = __commonJS({
       }
       req.route = this;
       next();
-      function next(err) {
-        if (err && err === "route") {
+      function next(err2) {
+        if (err2 && err2 === "route") {
           return done();
         }
-        if (err && err === "router") {
-          return done(err);
+        if (err2 && err2 === "router") {
+          return done(err2);
         }
         if (++sync > 100) {
-          return setImmediate(next, err);
+          return setImmediate(next, err2);
         }
         var layer = stack[idx++];
         if (!layer) {
-          return done(err);
+          return done(err2);
         }
         if (layer.method && layer.method !== method) {
-          next(err);
-        } else if (err) {
-          layer.handle_error(err, req, res, next);
+          next(err2);
+        } else if (err2) {
+          layer.handle_error(err2, req, res, next);
         } else {
           layer.handle_request(req, res, next);
         }
@@ -33968,17 +33968,17 @@ var require_router = __commonJS({
       var done = restore(out, req, "baseUrl", "next", "params");
       req.next = next;
       if (req.method === "OPTIONS") {
-        done = wrap(done, function(old, err) {
-          if (err || options.length === 0)
-            return old(err);
+        done = wrap(done, function(old, err2) {
+          if (err2 || options.length === 0)
+            return old(err2);
           sendOptionsResponse(res, options, old);
         });
       }
       req.baseUrl = parentUrl;
       req.originalUrl = req.originalUrl || req.url;
       next();
-      function next(err) {
-        var layerError = err === "route" ? null : err;
+      function next(err2) {
+        var layerError = err2 === "route" ? null : err2;
         if (slashAdded) {
           req.url = req.url.slice(1);
           slashAdded = false;
@@ -33997,10 +33997,10 @@ var require_router = __commonJS({
           return;
         }
         if (++sync > 100) {
-          return setImmediate(next, err);
+          return setImmediate(next, err2);
         }
-        var path = getPathname(req);
-        if (path == null) {
+        var path2 = getPathname(req);
+        if (path2 == null) {
           return done(layerError);
         }
         var layer;
@@ -34008,7 +34008,7 @@ var require_router = __commonJS({
         var route;
         while (match !== true && idx < stack.length) {
           layer = stack[idx++];
-          match = matchLayer(layer, path);
+          match = matchLayer(layer, path2);
           route = layer.route;
           if (typeof match !== "boolean") {
             layerError = layerError || match;
@@ -34040,24 +34040,24 @@ var require_router = __commonJS({
         }
         req.params = self.mergeParams ? mergeParams(layer.params, parentParams) : layer.params;
         var layerPath = layer.path;
-        self.process_params(layer, paramcalled, req, res, function(err2) {
-          if (err2) {
-            next(layerError || err2);
+        self.process_params(layer, paramcalled, req, res, function(err3) {
+          if (err3) {
+            next(layerError || err3);
           } else if (route) {
             layer.handle_request(req, res, next);
           } else {
-            trim_prefix(layer, layerError, layerPath, path);
+            trim_prefix(layer, layerError, layerPath, path2);
           }
           sync = 0;
         });
       }
-      function trim_prefix(layer, layerError, layerPath, path) {
+      function trim_prefix(layer, layerError, layerPath, path2) {
         if (layerPath.length !== 0) {
-          if (layerPath !== path.slice(0, layerPath.length)) {
+          if (layerPath !== path2.slice(0, layerPath.length)) {
             next(layerError);
             return;
           }
-          var c = path[layerPath.length];
+          var c = path2[layerPath.length];
           if (c && c !== "/" && c !== ".")
             return next(layerError);
           debug("trim prefix (%s) from url %s", layerPath, req.url);
@@ -34090,9 +34090,9 @@ var require_router = __commonJS({
       var paramVal;
       var paramCallbacks;
       var paramCalled;
-      function param(err) {
-        if (err) {
-          return done(err);
+      function param(err2) {
+        if (err2) {
+          return done(err2);
         }
         if (i >= keys.length) {
           return done();
@@ -34117,12 +34117,12 @@ var require_router = __commonJS({
         };
         paramCallback();
       }
-      function paramCallback(err) {
+      function paramCallback(err2) {
         var fn = paramCallbacks[paramIndex++];
         paramCalled.value = req.params[key.name];
-        if (err) {
-          paramCalled.error = err;
-          param(err);
+        if (err2) {
+          paramCalled.error = err2;
+          param(err2);
           return;
         }
         if (!fn)
@@ -34137,7 +34137,7 @@ var require_router = __commonJS({
     };
     proto.use = function use(fn) {
       var offset = 0;
-      var path = "/";
+      var path2 = "/";
       if (typeof fn !== "function") {
         var arg = fn;
         while (Array.isArray(arg) && arg.length !== 0) {
@@ -34145,7 +34145,7 @@ var require_router = __commonJS({
         }
         if (typeof arg !== "function") {
           offset = 1;
-          path = fn;
+          path2 = fn;
         }
       }
       var callbacks = flatten(slice.call(arguments, offset));
@@ -34157,8 +34157,8 @@ var require_router = __commonJS({
         if (typeof fn !== "function") {
           throw new TypeError("Router.use() requires a middleware function but got a " + gettype(fn));
         }
-        debug("use %o %s", path, fn.name || "<anonymous>");
-        var layer = new Layer(path, {
+        debug("use %o %s", path2, fn.name || "<anonymous>");
+        var layer = new Layer(path2, {
           sensitive: this.caseSensitive,
           strict: false,
           end: false
@@ -34168,9 +34168,9 @@ var require_router = __commonJS({
       }
       return this;
     };
-    proto.route = function route(path) {
-      var route2 = new Route(path);
-      var layer = new Layer(path, {
+    proto.route = function route(path2) {
+      var route2 = new Route(path2);
+      var layer = new Layer(path2, {
         sensitive: this.caseSensitive,
         strict: this.strict,
         end: true
@@ -34180,8 +34180,8 @@ var require_router = __commonJS({
       return route2;
     };
     methods.concat("all").forEach(function(method) {
-      proto[method] = function(path) {
-        var route = this.route(path);
+      proto[method] = function(path2) {
+        var route = this.route(path2);
         route[method].apply(route, slice.call(arguments, 1));
         return this;
       };
@@ -34197,7 +34197,7 @@ var require_router = __commonJS({
     function getPathname(req) {
       try {
         return parseUrl(req).pathname;
-      } catch (err) {
+      } catch (err2) {
         return void 0;
       }
     }
@@ -34217,11 +34217,11 @@ var require_router = __commonJS({
       }
       return toString.call(obj).replace(objectRegExp, "$1");
     }
-    function matchLayer(layer, path) {
+    function matchLayer(layer, path2) {
       try {
-        return layer.match(path);
-      } catch (err) {
-        return err;
+        return layer.match(path2);
+      } catch (err2) {
+        return err2;
       }
     }
     function mergeParams(params, parent) {
@@ -34267,8 +34267,8 @@ var require_router = __commonJS({
         var body = options.join(",");
         res.set("Allow", body);
         res.send(body);
-      } catch (err) {
-        next(err);
+      } catch (err2) {
+        next(err2);
       }
     }
     function wrap(old, fn) {
@@ -34338,13 +34338,13 @@ var require_view = __commonJS({
   "node_modules/express/lib/view.js"(exports, module2) {
     "use strict";
     var debug = require_src()("express:view");
-    var path = require("path");
-    var fs = require("fs");
-    var dirname = path.dirname;
-    var basename = path.basename;
-    var extname = path.extname;
-    var join = path.join;
-    var resolve = path.resolve;
+    var path2 = require("path");
+    var fs2 = require("fs");
+    var dirname = path2.dirname;
+    var basename = path2.basename;
+    var extname = path2.extname;
+    var join = path2.join;
+    var resolve = path2.resolve;
     module2.exports = View;
     function View(name, options) {
       var opts = options || {};
@@ -34373,17 +34373,17 @@ var require_view = __commonJS({
       this.path = this.lookup(fileName);
     }
     View.prototype.lookup = function lookup(name) {
-      var path2;
+      var path3;
       var roots = [].concat(this.root);
       debug('lookup "%s"', name);
-      for (var i = 0; i < roots.length && !path2; i++) {
+      for (var i = 0; i < roots.length && !path3; i++) {
         var root = roots[i];
         var loc = resolve(root, name);
         var dir = dirname(loc);
         var file = basename(loc);
-        path2 = this.resolve(dir, file);
+        path3 = this.resolve(dir, file);
       }
-      return path2;
+      return path3;
     };
     View.prototype.render = function render(options, callback) {
       debug('render "%s"', this.path);
@@ -34391,21 +34391,21 @@ var require_view = __commonJS({
     };
     View.prototype.resolve = function resolve2(dir, file) {
       var ext = this.ext;
-      var path2 = join(dir, file);
-      var stat = tryStat(path2);
+      var path3 = join(dir, file);
+      var stat = tryStat(path3);
       if (stat && stat.isFile()) {
-        return path2;
+        return path3;
       }
-      path2 = join(dir, basename(file, ext), "index" + ext);
-      stat = tryStat(path2);
+      path3 = join(dir, basename(file, ext), "index" + ext);
+      stat = tryStat(path3);
       if (stat && stat.isFile()) {
-        return path2;
+        return path3;
       }
     };
-    function tryStat(path2) {
-      debug('stat "%s"', path2);
+    function tryStat(path3) {
+      debug('stat "%s"', path3);
       try {
-        return fs.statSync(path2);
+        return fs2.statSync(path3);
       } catch (e) {
         return void 0;
       }
@@ -34759,8 +34759,8 @@ var require_types = __commonJS({
 // node_modules/mime/mime.js
 var require_mime = __commonJS({
   "node_modules/mime/mime.js"(exports, module2) {
-    var path = require("path");
-    var fs = require("fs");
+    var path2 = require("path");
+    var fs2 = require("fs");
     function Mime() {
       this.types = /* @__PURE__ */ Object.create(null);
       this.extensions = /* @__PURE__ */ Object.create(null);
@@ -34781,7 +34781,7 @@ var require_mime = __commonJS({
     };
     Mime.prototype.load = function(file) {
       this._loading = file;
-      var map = {}, content = fs.readFileSync(file, "ascii"), lines = content.split(/[\r\n]+/);
+      var map = {}, content = fs2.readFileSync(file, "ascii"), lines = content.split(/[\r\n]+/);
       lines.forEach(function(line) {
         var fields = line.replace(/\s*#.*|^\s*|\s*$/g, "").split(/\s+/);
         map[fields.shift()] = fields;
@@ -34789,8 +34789,8 @@ var require_mime = __commonJS({
       this.define(map);
       this._loading = null;
     };
-    Mime.prototype.lookup = function(path2, fallback) {
-      var ext = path2.replace(/^.*[\.\/\\]/, "").toLowerCase();
+    Mime.prototype.lookup = function(path3, fallback) {
+      var ext = path3.replace(/^.*[\.\/\\]/, "").toLowerCase();
       return this.types[ext] || fallback || this.default_type;
     };
     Mime.prototype.extension = function(mimeType) {
@@ -35019,33 +35019,33 @@ var require_send = __commonJS({
     var escapeHtml = require_escape_html();
     var etag = require_etag();
     var fresh = require_fresh();
-    var fs = require("fs");
+    var fs2 = require("fs");
     var mime = require_mime();
     var ms = require_ms2();
     var onFinished = require_on_finished();
     var parseRange = require_range_parser();
-    var path = require("path");
+    var path2 = require("path");
     var statuses = require_statuses();
     var Stream = require("stream");
     var util = require("util");
-    var extname = path.extname;
-    var join = path.join;
-    var normalize = path.normalize;
-    var resolve = path.resolve;
-    var sep = path.sep;
+    var extname = path2.extname;
+    var join = path2.join;
+    var normalize = path2.normalize;
+    var resolve = path2.resolve;
+    var sep = path2.sep;
     var BYTES_RANGE_REGEXP = /^ *bytes=/;
     var MAX_MAXAGE = 60 * 60 * 24 * 365 * 1e3;
     var UP_PATH_REGEXP = /(?:^|[\\/])\.\.(?:[\\/]|$)/;
     module2.exports = send;
     module2.exports.mime = mime;
-    function send(req, path2, options) {
-      return new SendStream(req, path2, options);
+    function send(req, path3, options) {
+      return new SendStream(req, path3, options);
     }
-    function SendStream(req, path2, options) {
+    function SendStream(req, path3, options) {
       Stream.call(this);
       var opts = options || {};
       this.options = opts;
-      this.path = path2;
+      this.path = path3;
       this.req = req;
       this._acceptRanges = opts.acceptRanges !== void 0 ? Boolean(opts.acceptRanges) : true;
       this._cacheControl = opts.cacheControl !== void 0 ? Boolean(opts.cacheControl) : true;
@@ -35091,8 +35091,8 @@ var require_send = __commonJS({
       this._index = index2;
       return this;
     }, "send.index: pass index as option");
-    SendStream.prototype.root = function root(path2) {
-      this._root = resolve(String(path2));
+    SendStream.prototype.root = function root(path3) {
+      this._root = resolve(String(path3));
       debug("root %s", this._root);
       return this;
     };
@@ -35110,16 +35110,16 @@ var require_send = __commonJS({
       debug("max-age %d", this._maxage);
       return this;
     }, "send.maxage: pass maxAge as option");
-    SendStream.prototype.error = function error(status, err) {
+    SendStream.prototype.error = function error(status, err2) {
       if (hasListeners(this, "error")) {
-        return this.emit("error", createHttpError(status, err));
+        return this.emit("error", createHttpError(status, err2));
       }
       var res = this.res;
       var msg = statuses.message[status] || String(status);
       var doc = createHtmlDocument("Error", escapeHtml(msg));
       clearHeaders(res);
-      if (err && err.headers) {
-        setHeaders(res, err.headers);
+      if (err2 && err2.headers) {
+        setHeaders(res, err2.headers);
       }
       res.statusCode = status;
       res.setHeader("Content-Type", "text/html; charset=UTF-8");
@@ -35167,9 +35167,9 @@ var require_send = __commonJS({
       res.end();
     };
     SendStream.prototype.headersAlreadySent = function headersAlreadySent() {
-      var err = new Error("Can't set headers after they are sent.");
+      var err2 = new Error("Can't set headers after they are sent.");
       debug("headers already sent");
-      this.error(500, err);
+      this.error(500, err2);
     };
     SendStream.prototype.isCachable = function isCachable() {
       var statusCode = this.res.statusCode;
@@ -35205,10 +35205,10 @@ var require_send = __commonJS({
       var lastModified = this.res.getHeader("Last-Modified");
       return parseHttpDate(lastModified) <= parseHttpDate(ifRange);
     };
-    SendStream.prototype.redirect = function redirect(path2) {
+    SendStream.prototype.redirect = function redirect(path3) {
       var res = this.res;
       if (hasListeners(this, "directory")) {
-        this.emit("directory", res, path2);
+        this.emit("directory", res, path3);
         return;
       }
       if (this.hasTrailingSlash()) {
@@ -35228,42 +35228,42 @@ var require_send = __commonJS({
     SendStream.prototype.pipe = function pipe(res) {
       var root = this._root;
       this.res = res;
-      var path2 = decode(this.path);
-      if (path2 === -1) {
+      var path3 = decode(this.path);
+      if (path3 === -1) {
         this.error(400);
         return res;
       }
-      if (~path2.indexOf("\0")) {
+      if (~path3.indexOf("\0")) {
         this.error(400);
         return res;
       }
       var parts;
       if (root !== null) {
-        if (path2) {
-          path2 = normalize("." + sep + path2);
+        if (path3) {
+          path3 = normalize("." + sep + path3);
         }
-        if (UP_PATH_REGEXP.test(path2)) {
-          debug('malicious path "%s"', path2);
+        if (UP_PATH_REGEXP.test(path3)) {
+          debug('malicious path "%s"', path3);
           this.error(403);
           return res;
         }
-        parts = path2.split(sep);
-        path2 = normalize(join(root, path2));
+        parts = path3.split(sep);
+        path3 = normalize(join(root, path3));
       } else {
-        if (UP_PATH_REGEXP.test(path2)) {
-          debug('malicious path "%s"', path2);
+        if (UP_PATH_REGEXP.test(path3)) {
+          debug('malicious path "%s"', path3);
           this.error(403);
           return res;
         }
-        parts = normalize(path2).split(sep);
-        path2 = resolve(path2);
+        parts = normalize(path3).split(sep);
+        path3 = resolve(path3);
       }
       if (containsDotFile(parts)) {
         var access = this._dotfiles;
         if (access === void 0) {
           access = parts[parts.length - 1][0] === "." ? this._hidden ? "allow" : "ignore" : "allow";
         }
-        debug('%s dotfile "%s"', access, path2);
+        debug('%s dotfile "%s"', access, path3);
         switch (access) {
           case "allow":
             break;
@@ -35277,13 +35277,13 @@ var require_send = __commonJS({
         }
       }
       if (this._index.length && this.hasTrailingSlash()) {
-        this.sendIndex(path2);
+        this.sendIndex(path3);
         return res;
       }
-      this.sendFile(path2);
+      this.sendFile(path3);
       return res;
     };
-    SendStream.prototype.send = function send2(path2, stat) {
+    SendStream.prototype.send = function send2(path3, stat) {
       var len = stat.size;
       var options = this.options;
       var opts = {};
@@ -35295,9 +35295,9 @@ var require_send = __commonJS({
         this.headersAlreadySent();
         return;
       }
-      debug('pipe "%s"', path2);
-      this.setHeader(path2, stat);
-      this.type(path2);
+      debug('pipe "%s"', path3);
+      this.setHeader(path3, stat);
+      this.type(path3);
       if (this.isConditionalGET()) {
         if (this.isPreconditionFailure()) {
           this.error(412);
@@ -35347,32 +35347,32 @@ var require_send = __commonJS({
         res.end();
         return;
       }
-      this.stream(path2, opts);
+      this.stream(path3, opts);
     };
-    SendStream.prototype.sendFile = function sendFile(path2) {
+    SendStream.prototype.sendFile = function sendFile(path3) {
       var i = 0;
       var self = this;
-      debug('stat "%s"', path2);
-      fs.stat(path2, function onstat(err, stat) {
-        if (err && err.code === "ENOENT" && !extname(path2) && path2[path2.length - 1] !== sep) {
-          return next(err);
+      debug('stat "%s"', path3);
+      fs2.stat(path3, function onstat(err2, stat) {
+        if (err2 && err2.code === "ENOENT" && !extname(path3) && path3[path3.length - 1] !== sep) {
+          return next(err2);
         }
-        if (err)
-          return self.onStatError(err);
+        if (err2)
+          return self.onStatError(err2);
         if (stat.isDirectory())
-          return self.redirect(path2);
-        self.emit("file", path2, stat);
-        self.send(path2, stat);
+          return self.redirect(path3);
+        self.emit("file", path3, stat);
+        self.send(path3, stat);
       });
-      function next(err) {
+      function next(err2) {
         if (self._extensions.length <= i) {
-          return err ? self.onStatError(err) : self.error(404);
+          return err2 ? self.onStatError(err2) : self.error(404);
         }
-        var p = path2 + "." + self._extensions[i++];
+        var p = path3 + "." + self._extensions[i++];
         debug('stat "%s"', p);
-        fs.stat(p, function(err2, stat) {
-          if (err2)
-            return next(err2);
+        fs2.stat(p, function(err3, stat) {
+          if (err3)
+            return next(err3);
           if (stat.isDirectory())
             return next();
           self.emit("file", p, stat);
@@ -35380,20 +35380,20 @@ var require_send = __commonJS({
         });
       }
     };
-    SendStream.prototype.sendIndex = function sendIndex(path2) {
+    SendStream.prototype.sendIndex = function sendIndex(path3) {
       var i = -1;
       var self = this;
-      function next(err) {
+      function next(err2) {
         if (++i >= self._index.length) {
-          if (err)
-            return self.onStatError(err);
+          if (err2)
+            return self.onStatError(err2);
           return self.error(404);
         }
-        var p = join(path2, self._index[i]);
+        var p = join(path3, self._index[i]);
         debug('stat "%s"', p);
-        fs.stat(p, function(err2, stat) {
-          if (err2)
-            return next(err2);
+        fs2.stat(p, function(err3, stat) {
+          if (err3)
+            return next(err3);
           if (stat.isDirectory())
             return next();
           self.emit("file", p, stat);
@@ -35402,29 +35402,29 @@ var require_send = __commonJS({
       }
       next();
     };
-    SendStream.prototype.stream = function stream(path2, options) {
+    SendStream.prototype.stream = function stream(path3, options) {
       var self = this;
       var res = this.res;
-      var stream2 = fs.createReadStream(path2, options);
+      var stream2 = fs2.createReadStream(path3, options);
       this.emit("stream", stream2);
       stream2.pipe(res);
       function cleanup() {
         destroy(stream2, true);
       }
       onFinished(res, cleanup);
-      stream2.on("error", function onerror(err) {
+      stream2.on("error", function onerror(err2) {
         cleanup();
-        self.onStatError(err);
+        self.onStatError(err2);
       });
       stream2.on("end", function onend() {
         self.emit("end");
       });
     };
-    SendStream.prototype.type = function type(path2) {
+    SendStream.prototype.type = function type(path3) {
       var res = this.res;
       if (res.getHeader("Content-Type"))
         return;
-      var type2 = mime.lookup(path2);
+      var type2 = mime.lookup(path3);
       if (!type2) {
         debug("no content-type");
         return;
@@ -35433,9 +35433,9 @@ var require_send = __commonJS({
       debug("content-type %s", type2);
       res.setHeader("Content-Type", type2 + (charset ? "; charset=" + charset : ""));
     };
-    SendStream.prototype.setHeader = function setHeader(path2, stat) {
+    SendStream.prototype.setHeader = function setHeader(path3, stat) {
       var res = this.res;
-      this.emit("headers", res, path2, stat);
+      this.emit("headers", res, path3, stat);
       if (this._acceptRanges && !res.getHeader("Accept-Ranges")) {
         debug("accept ranges");
         res.setHeader("Accept-Ranges", "bytes");
@@ -35488,16 +35488,16 @@ var require_send = __commonJS({
     function createHtmlDocument(title, body) {
       return '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<title>' + title + "</title>\n</head>\n<body>\n<pre>" + body + "</pre>\n</body>\n</html>\n";
     }
-    function createHttpError(status, err) {
-      if (!err) {
+    function createHttpError(status, err2) {
+      if (!err2) {
         return createError(status);
       }
-      return err instanceof Error ? createError(status, err, { expose: false }) : createError(status, err);
+      return err2 instanceof Error ? createError(status, err2, { expose: false }) : createError(status, err2);
     }
-    function decode(path2) {
+    function decode(path3) {
       try {
-        return decodeURIComponent(path2);
-      } catch (err) {
+        return decodeURIComponent(path3);
+      } catch (err2) {
         return -1;
       }
     }
@@ -36408,12 +36408,12 @@ var require_utils2 = __commonJS({
     var querystring = require("querystring");
     exports.etag = createETagGenerator({ weak: false });
     exports.wetag = createETagGenerator({ weak: true });
-    exports.isAbsolute = function(path) {
-      if ("/" === path[0])
+    exports.isAbsolute = function(path2) {
+      if ("/" === path2[0])
         return true;
-      if (":" === path[1] && ("\\" === path[2] || "/" === path[2]))
+      if (":" === path2[1] && ("\\" === path2[2] || "/" === path2[2]))
         return true;
-      if ("\\\\" === path.substring(0, 2))
+      if ("\\\\" === path2.substring(0, 2))
         return true;
     };
     exports.flatten = deprecate.function(
@@ -36626,7 +36626,7 @@ var require_application = __commonJS({
     };
     app.use = function use(fn) {
       var offset = 0;
-      var path = "/";
+      var path2 = "/";
       if (typeof fn !== "function") {
         var arg = fn;
         while (Array.isArray(arg) && arg.length !== 0) {
@@ -36634,7 +36634,7 @@ var require_application = __commonJS({
         }
         if (typeof arg !== "function") {
           offset = 1;
-          path = fn;
+          path2 = fn;
         }
       }
       var fns = flatten(slice.call(arguments, offset));
@@ -36645,26 +36645,26 @@ var require_application = __commonJS({
       var router = this._router;
       fns.forEach(function(fn2) {
         if (!fn2 || !fn2.handle || !fn2.set) {
-          return router.use(path, fn2);
+          return router.use(path2, fn2);
         }
-        debug(".use app under %s", path);
-        fn2.mountpath = path;
+        debug(".use app under %s", path2);
+        fn2.mountpath = path2;
         fn2.parent = this;
-        router.use(path, function mounted_app(req, res, next) {
+        router.use(path2, function mounted_app(req, res, next) {
           var orig = req.app;
-          fn2.handle(req, res, function(err) {
+          fn2.handle(req, res, function(err2) {
             setPrototypeOf(req, orig.request);
             setPrototypeOf(res, orig.response);
-            next(err);
+            next(err2);
           });
         });
         fn2.emit("mount", this);
       }, this);
       return this;
     };
-    app.route = function route(path) {
+    app.route = function route(path2) {
       this.lazyrouter();
-      return this._router.route(path);
+      return this._router.route(path2);
     };
     app.engine = function engine(ext, fn) {
       if (typeof fn !== "function") {
@@ -36715,7 +36715,7 @@ var require_application = __commonJS({
       }
       return this;
     };
-    app.path = function path() {
+    app.path = function path2() {
       return this.parent ? this.parent.path() + this.mountpath : "";
     };
     app.enabled = function enabled(setting) {
@@ -36731,19 +36731,19 @@ var require_application = __commonJS({
       return this.set(setting, false);
     };
     methods.forEach(function(method) {
-      app[method] = function(path) {
+      app[method] = function(path2) {
         if (method === "get" && arguments.length === 1) {
-          return this.set(path);
+          return this.set(path2);
         }
         this.lazyrouter();
-        var route = this._router.route(path);
+        var route = this._router.route(path2);
         route[method].apply(route, slice.call(arguments, 1));
         return this;
       };
     });
-    app.all = function all(path) {
+    app.all = function all(path2) {
       this.lazyrouter();
-      var route = this._router.route(path);
+      var route = this._router.route(path2);
       var args = slice.call(arguments, 1);
       for (var i = 0; i < methods.length; i++) {
         route[methods[i]].apply(route, args);
@@ -36782,9 +36782,9 @@ var require_application = __commonJS({
         });
         if (!view.path) {
           var dirs = Array.isArray(view.root) && view.root.length > 1 ? 'directories "' + view.root.slice(0, -1).join('", "') + '" or "' + view.root[view.root.length - 1] + '"' : 'directory "' + view.root + '"';
-          var err = new Error('Failed to lookup view "' + name + '" in views ' + dirs);
-          err.view = view;
-          return done(err);
+          var err2 = new Error('Failed to lookup view "' + name + '" in views ' + dirs);
+          err2.view = view;
+          return done(err2);
         }
         if (renderOptions.cache) {
           cache[name] = view;
@@ -36796,15 +36796,15 @@ var require_application = __commonJS({
       var server2 = http.createServer(this);
       return server2.listen.apply(server2, arguments);
     };
-    function logerror(err) {
+    function logerror(err2) {
       if (this.get("env") !== "test")
-        console.error(err.stack || err.toString());
+        console.error(err2.stack || err2.toString());
     }
     function tryRender(view, options, callback) {
       try {
         view.render(options, callback);
-      } catch (err) {
-        callback(err);
+      } catch (err2) {
+        callback(err2);
       }
     }
   }
@@ -37515,7 +37515,7 @@ var require_request = __commonJS({
       var subdomains2 = !isIP(hostname) ? hostname.split(".").reverse() : [hostname];
       return subdomains2.slice(offset);
     });
-    defineGetter(req, "path", function path() {
+    defineGetter(req, "path", function path2() {
       return parse(this).pathname;
     });
     defineGetter(req, "hostname", function hostname() {
@@ -37819,7 +37819,7 @@ var require_response = __commonJS({
     var http = require("http");
     var isAbsolute = require_utils2().isAbsolute;
     var onFinished = require_on_finished();
-    var path = require("path");
+    var path2 = require("path");
     var statuses = require_statuses();
     var merge = require_utils_merge();
     var sign = require_cookie_signature().sign;
@@ -37828,9 +37828,9 @@ var require_response = __commonJS({
     var setCharset = require_utils2().setCharset;
     var cookie = require_cookie();
     var send = require_send();
-    var extname = path.extname;
+    var extname = path2.extname;
     var mime = send.mime;
-    var resolve = path.resolve;
+    var resolve = path2.resolve;
     var vary = require_vary();
     var res = Object.create(http.ServerResponse.prototype);
     module2.exports = res;
@@ -38008,38 +38008,38 @@ var require_response = __commonJS({
       this.type("txt");
       return this.send(body);
     };
-    res.sendFile = function sendFile(path2, options, callback) {
+    res.sendFile = function sendFile(path3, options, callback) {
       var done = callback;
       var req = this.req;
       var res2 = this;
       var next = req.next;
       var opts = options || {};
-      if (!path2) {
+      if (!path3) {
         throw new TypeError("path argument is required to res.sendFile");
       }
-      if (typeof path2 !== "string") {
+      if (typeof path3 !== "string") {
         throw new TypeError("path must be a string to res.sendFile");
       }
       if (typeof options === "function") {
         done = options;
         opts = {};
       }
-      if (!opts.root && !isAbsolute(path2)) {
+      if (!opts.root && !isAbsolute(path3)) {
         throw new TypeError("path must be absolute or specify root to res.sendFile");
       }
-      var pathname = encodeURI(path2);
+      var pathname = encodeURI(path3);
       var file = send(req, pathname, opts);
-      sendfile(res2, file, opts, function(err) {
+      sendfile(res2, file, opts, function(err2) {
         if (done)
-          return done(err);
-        if (err && err.code === "EISDIR")
+          return done(err2);
+        if (err2 && err2.code === "EISDIR")
           return next();
-        if (err && err.code !== "ECONNABORTED" && err.syscall !== "write") {
-          next(err);
+        if (err2 && err2.code !== "ECONNABORTED" && err2.syscall !== "write") {
+          next(err2);
         }
       });
     };
-    res.sendfile = function(path2, options, callback) {
+    res.sendfile = function(path3, options, callback) {
       var done = callback;
       var req = this.req;
       var res2 = this;
@@ -38049,14 +38049,14 @@ var require_response = __commonJS({
         done = options;
         opts = {};
       }
-      var file = send(req, path2, opts);
-      sendfile(res2, file, opts, function(err) {
+      var file = send(req, path3, opts);
+      sendfile(res2, file, opts, function(err2) {
         if (done)
-          return done(err);
-        if (err && err.code === "EISDIR")
+          return done(err2);
+        if (err2 && err2.code === "EISDIR")
           return next();
-        if (err && err.code !== "ECONNABORTED" && err.syscall !== "write") {
-          next(err);
+        if (err2 && err2.code !== "ECONNABORTED" && err2.syscall !== "write") {
+          next(err2);
         }
       });
     };
@@ -38064,7 +38064,7 @@ var require_response = __commonJS({
       res.sendfile,
       "res.sendfile: Use res.sendFile instead"
     );
-    res.download = function download(path2, filename, options, callback) {
+    res.download = function download(path3, filename, options, callback) {
       var done = callback;
       var name = filename;
       var opts = options || null;
@@ -38081,7 +38081,7 @@ var require_response = __commonJS({
         opts = filename;
       }
       var headers = {
-        "Content-Disposition": contentDisposition(name || path2)
+        "Content-Disposition": contentDisposition(name || path3)
       };
       if (opts && opts.headers) {
         var keys = Object.keys(opts.headers);
@@ -38094,7 +38094,7 @@ var require_response = __commonJS({
       }
       opts = Object.create(opts);
       opts.headers = headers;
-      var fullPath = !opts.root ? resolve(path2) : path2;
+      var fullPath = !opts.root ? resolve(path3) : path3;
       return this.sendFile(fullPath, opts, done);
     };
     res.contentType = res.type = function contentType(type) {
@@ -38250,9 +38250,9 @@ var require_response = __commonJS({
         opts = {};
       }
       opts._locals = self.locals;
-      done = done || function(err, str) {
-        if (err)
-          return req.next(err);
+      done = done || function(err2, str) {
+        if (err2)
+          return req.next(err2);
         self.send(str);
       };
       app.render(view, opts, done);
@@ -38264,23 +38264,23 @@ var require_response = __commonJS({
         if (done)
           return;
         done = true;
-        var err = new Error("Request aborted");
-        err.code = "ECONNABORTED";
-        callback(err);
+        var err2 = new Error("Request aborted");
+        err2.code = "ECONNABORTED";
+        callback(err2);
       }
       function ondirectory() {
         if (done)
           return;
         done = true;
-        var err = new Error("EISDIR, read");
-        err.code = "EISDIR";
-        callback(err);
+        var err2 = new Error("EISDIR, read");
+        err2.code = "EISDIR";
+        callback(err2);
       }
-      function onerror(err) {
+      function onerror(err2) {
         if (done)
           return;
         done = true;
-        callback(err);
+        callback(err2);
       }
       function onend() {
         if (done)
@@ -38291,11 +38291,11 @@ var require_response = __commonJS({
       function onfile() {
         streaming = false;
       }
-      function onfinish(err) {
-        if (err && err.code === "ECONNRESET")
+      function onfinish(err2) {
+        if (err2 && err2.code === "ECONNRESET")
           return onaborted();
-        if (err)
-          return onerror(err);
+        if (err2)
+          return onerror(err2);
         if (done)
           return;
         setImmediate(function() {
@@ -38393,11 +38393,11 @@ var require_serve_static = __commonJS({
         }
         var forwardError = !fallthrough;
         var originalUrl = parseUrl.original(req);
-        var path = parseUrl(req).pathname;
-        if (path === "/" && originalUrl.pathname.substr(-1) !== "/") {
-          path = "";
+        var path2 = parseUrl(req).pathname;
+        if (path2 === "/" && originalUrl.pathname.substr(-1) !== "/") {
+          path2 = "";
         }
-        var stream = send(req, path, opts);
+        var stream = send(req, path2, opts);
         stream.on("directory", onDirectory);
         if (setHeaders) {
           stream.on("headers", setHeaders);
@@ -38407,9 +38407,9 @@ var require_serve_static = __commonJS({
             forwardError = true;
           });
         }
-        stream.on("error", function error(err) {
-          if (forwardError || !(err.statusCode < 500)) {
-            next(err);
+        stream.on("error", function error(err2) {
+          if (forwardError || !(err2.statusCode < 500)) {
+            next(err2);
             return;
           }
           next();
@@ -38534,19 +38534,119 @@ var require_express2 = __commonJS({
 });
 
 // server.jsx
-var import_react2 = __toESM(require_react());
+var import_react3 = __toESM(require_react());
 var import_server = __toESM(require_server_node());
 var import_express = __toESM(require_express2());
+var import_path = __toESM(require("path"));
+var import_fs = __toESM(require("fs"));
 
-// home.jsx
+// components/home.jsx
 var import_react = __toESM(require_react());
 var Home = () => /* @__PURE__ */ import_react.default.createElement("h1", null, "Hello, SNES");
+
+// components/game.jsx
+var import_react2 = __toESM(require_react());
+var Game = ({ name = "", id }) => {
+  const hasExtension = /.png/.test(name);
+  const parsedName = name.replace(".png", "");
+  const gameTitle = id?.replace(" (PAL).png", "") || name;
+  console.log({ name });
+  console.log({ id });
+  const imagePath = hasExtension ? `/${parsedName} (PAL).png` : `/${name} (PAL).png`;
+  return /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.container }, /* @__PURE__ */ import_react2.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react2.default.createElement("h1", { style: styles.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react2.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.imageBackground }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.topEdge }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.bottomEdge }), /* @__PURE__ */ import_react2.default.createElement(
+    "img",
+    {
+      src: id || imagePath,
+      alt: id || name,
+      style: { transform: "skewX(10deg)" }
+    }
+  ))));
+};
+var styles = {
+  container: {
+    display: "grid",
+    placeItems: "center",
+    width: "100%",
+    height: "100%"
+  },
+  title: {
+    fontFamily: "Monaco",
+    fontSize: "72px",
+    fontWeight: "bold",
+    letterSpacing: "0.1em",
+    color: "#251b1b",
+    textAlign: "center",
+    textShadow: "3px 3px 0 red, -3px -3px 0 aqua"
+  },
+  imageBackground: {
+    background: "black",
+    transform: "skewX(10deg)",
+    width: "100%",
+    height: "100%",
+    zIndex: "-1",
+    position: "absolute",
+    right: "-6%",
+    top: "36px"
+  },
+  topEdge: {
+    zIndex: "-1",
+    position: "absolute",
+    right: "4px",
+    top: "15px",
+    width: "0",
+    height: "0",
+    borderLeft: "30px solid transparent",
+    borderRight: "30px solid transparent",
+    borderTop: "30px solid black",
+    transform: "rotate(38deg)"
+  },
+  bottomEdge: {
+    zIndex: "-1",
+    position: "absolute",
+    left: "50px",
+    bottom: "-21px",
+    width: "0",
+    height: "0",
+    borderLeft: "31px solid transparent",
+    borderRight: "30px solid transparent",
+    borderTop: "30px solid black",
+    transform: "rotate(-143deg)"
+  }
+};
 
 // server.jsx
 var server = (0, import_express.default)();
 var port = 3e3;
-server.use("/", (req, res) => {
-  res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react2.default.createElement(Home, null)));
+server.use(import_express.default.static(__dirname + "/public"));
+server.use("/game/:name", (req, res) => {
+  res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Game, { name: req.params.name })));
+});
+server.use("/game", (req, res) => {
+  const id = req.query.id;
+  if (id && Number(id)) {
+    const publicPath = import_path.default.join(__dirname, "/public");
+    try {
+      import_fs.default.readdir(publicPath, (error, files) => {
+        if (error) {
+          res.redirect("/");
+          return console.err(err);
+        }
+        if (id > files.length || id <= 0) {
+          res.redirect("/");
+          return console.error(`file id doesn't exist`);
+        }
+        res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Game, { id: files[id] })));
+      });
+    } catch (error) {
+      console.error(error);
+      res.redirect("/");
+    }
+  } else {
+    res.redirect("/");
+  }
+});
+server.use("/", (_, res) => {
+  res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Home, null)));
 });
 server.listen(port, () => {
   console.log(`server listening on port ${port}`);
