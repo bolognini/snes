@@ -38542,7 +38542,53 @@ var import_fs = __toESM(require("fs"));
 
 // components/home.jsx
 var import_react = __toESM(require_react());
-var Home = () => /* @__PURE__ */ import_react.default.createElement("h1", null, "Hello, SNES");
+var Home = () => {
+  return /* @__PURE__ */ import_react.default.createElement("div", { style: styles.container }, /* @__PURE__ */ import_react.default.createElement("h1", { style: styles.title }, "SNES"), /* @__PURE__ */ import_react.default.createElement("p", { style: styles.description }, `go to`, /* @__PURE__ */ import_react.default.createElement(
+    "a",
+    {
+      style: styles.link,
+      href: "/game?id=378"
+    },
+    ` /game?id={number between 1 and 822}`
+  )), /* @__PURE__ */ import_react.default.createElement("p", { style: styles.description }, `or go to`, /* @__PURE__ */ import_react.default.createElement(
+    "a",
+    {
+      style: styles.link,
+      href: "/game/Super Mario World"
+    },
+    ` /game/{name of the game}`
+  )));
+};
+var styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%"
+  },
+  title: {
+    fontFamily: "Monaco",
+    fontSize: "72px",
+    fontWeight: "bold",
+    letterSpacing: "0.1em",
+    color: "#251b1b",
+    textAlign: "center",
+    textShadow: "3px 3px 0 red, -3px -3px 0 aqua"
+  },
+  description: {
+    fontFamily: "Monaco",
+    fontSize: "24px",
+    fontWeight: "bold",
+    letterSpacing: "0.1em",
+    color: "#251b1b",
+    textAlign: "center"
+  },
+  link: {
+    color: "#ff5076",
+    textDecoration: "none"
+  }
+};
 
 // components/game.jsx
 var import_react2 = __toESM(require_react());
@@ -38553,7 +38599,7 @@ var Game = ({ name = "", id }) => {
   console.log({ name });
   console.log({ id });
   const imagePath = hasExtension ? `/${parsedName} (PAL).png` : `/${name} (PAL).png`;
-  return /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.container }, /* @__PURE__ */ import_react2.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react2.default.createElement("h1", { style: styles.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react2.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.imageBackground }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.topEdge }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles.bottomEdge }), /* @__PURE__ */ import_react2.default.createElement(
+  return /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.container }, /* @__PURE__ */ import_react2.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react2.default.createElement("h1", { style: styles2.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react2.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.imageBackground }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.topEdge }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.bottomEdge }), /* @__PURE__ */ import_react2.default.createElement(
     "img",
     {
       src: id || imagePath,
@@ -38562,7 +38608,7 @@ var Game = ({ name = "", id }) => {
     }
   ))));
 };
-var styles = {
+var styles2 = {
   container: {
     display: "grid",
     placeItems: "center",
