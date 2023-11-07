@@ -12,9 +12,10 @@ SNES was created for study purposes - The objective is using it as a simple proj
 
 ## Project
 
-SNES has just X endpoints to receive data.
+SNES has just 2 routes:
 
-**GET** - `/TBD/:TBD` <br/>
+- `/game?id`: The id needs to be between 1 and 822 <br/>
+- `/game/:name`: The name needs to be exact the same name of the game <br/>
 
 ### Installing
 

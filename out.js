@@ -38631,7 +38631,7 @@ server.use("/game", (req, res) => {
           res.redirect("/");
           return console.err(err);
         }
-        if (id > files.length || id <= 0) {
+        if (id >= files.length || id <= 0) {
           res.redirect("/");
           return console.error(`file id doesn't exist`);
         }
