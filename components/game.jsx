@@ -5,9 +5,6 @@ export const Game = ({ name = "", id }) => {
   const parsedName = name.replace(".png", "");
   const gameTitle = id?.replace(" (PAL).png", "") || name;
 
-  console.log({ name });
-  console.log({ id });
-
   const imagePath = hasExtension
     ? `/${parsedName} (PAL).png`
     : `/${name} (PAL).png`;
