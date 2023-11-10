@@ -38596,8 +38596,6 @@ var Game = ({ name = "", id }) => {
   const hasExtension = /.png/.test(name);
   const parsedName = name.replace(".png", "");
   const gameTitle = id?.replace(" (PAL).png", "") || name;
-  console.log({ name });
-  console.log({ id });
   const imagePath = hasExtension ? `/${parsedName} (PAL).png` : `/${name} (PAL).png`;
   return /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.container }, /* @__PURE__ */ import_react2.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react2.default.createElement("h1", { style: styles2.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react2.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.imageBackground }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.topEdge }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.bottomEdge }), /* @__PURE__ */ import_react2.default.createElement(
     "img",
@@ -38664,6 +38662,25 @@ var styles2 = {
 var server = (0, import_express.default)();
 var port = 3e3;
 server.use(import_express.default.static(__dirname + "/public"));
+server.use("/server/bicho", [
+  async (req, res, next) => {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
+    const dados = await response.json();
+    res.poke = dados;
+    next();
+  },
+  async (req, res, next) => {
+    res.json({
+      id: res.poke.id,
+      name: res.poke.name,
+      height: res.poke.height,
+      sprite: res.poke.sprites.front_default
+    });
+  }
+]);
+server.use("/client", (req, res) => {
+  res.send(`<html><body><script src="/main.js"></script></body></html>`);
+});
 server.use("/game/:name", (req, res) => {
   res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Game, { name: req.params.name })));
 });
