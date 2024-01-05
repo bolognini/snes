@@ -2,13 +2,13 @@
 
 <p align="center"><img src="assets/icon.png" alt="SNES console" width="60"></p>
 <p align="center">&laquo;<b>A Fullstack project to render SNES box cover arts</b>&raquo;</p>
-<p align="center">SNES is a very simple Fullstack project, including a Backend for Frontend API and a React application that lists SNES box cover arts</p>
+<p align="center">SNES is an extremely simple Fullstack project, including a Backend for Frontend API and a React application that lists SNES box cover arts</p>
 <br />
 <br />
 
 ## Description
 
-SNES was created for study purposes - The objective is using it as a simple project example to use in a mentorship I'm having in my current workplace.
+SNES was created for study purposes - The objective is to use it as a simple project example for a mentorship I'm having in my current workplace. The objective is to go back to the foundation and understand how things work under the hood by trying to replicate it from scratch. It includes mostly understanding how server and client connect with each other, and how cache, hydration, and SSR work.
 
 ## Project
 
