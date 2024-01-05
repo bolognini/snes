@@ -9,38 +9,43 @@ import { Game } from "./components/game";
 
 const server = express();
 const port = 3000;
+// let cache = {};
 
+const getGameListMiddleware = async (req, res, next) => {
+  const response = await fetch(
+    "https://6598072c668d248edf23f18a.mockapi.io/snesdb/games",
+  );
+  // cache = response;
+  const gameListData = await response.json();
+
+  res.gameListData = gameListData;
+  next();
+};
+
+const sendGameListReponseMiddleware = async (req, res) => {
+  console.log(res.gameListData[0].publisherName);
+
+  const game = renderToString(
+    <Game
+      name={req.params.name}
+      publisher={res.gameListData[0].publisherName}
+    />,
+  );
+
+  await res.send(
+    `<html><body><div id="root">${game}</div><script src="/hydration.js"></script></body></html>`,
+  );
+};
 server.use(express.static(__dirname + "/public"));
-
-server.use("/server/bicho", [
-  async (req, res, next) => {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
-    const dados = await response.json();
-
-    res.poke = dados;
-    next();
-  },
-  async (req, res, next) => {
-    res.json({
-      id: res.poke.id,
-      name: res.poke.name,
-      height: res.poke.height,
-      sprite: res.poke.sprites.front_default,
-    });
-  },
-]);
 
 server.use("/client", (req, res) => {
   res.send(`<html><body><script src="/main.js"></script></body></html>`);
-  // fs.readFile("main.js", "utf8", (err, data) => {
-  //   if (err) throw err;
-  //   console.log(data);
-  // });
 });
 
-server.use("/game/:name", (req, res) => {
-  res.send(renderToString(<Game name={req.params.name} />));
-});
+server.use("/game/:name", [
+  getGameListMiddleware,
+  sendGameListReponseMiddleware,
+]);
 
 server.use("/game", (req, res) => {
   const id = req.query.id;

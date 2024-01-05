@@ -1084,7 +1084,7 @@
             }
             return dispatcher.useContext(Context);
           }
-          function useState(initialState) {
+          function useState2(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1096,7 +1096,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect(create, deps) {
+          function useEffect2(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1878,7 +1878,7 @@
           exports.useContext = useContext;
           exports.useDebugValue = useDebugValue;
           exports.useDeferredValue = useDeferredValue;
-          exports.useEffect = useEffect;
+          exports.useEffect = useEffect2;
           exports.useId = useId;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useInsertionEffect = useInsertionEffect;
@@ -1886,7 +1886,7 @@
           exports.useMemo = useMemo;
           exports.useReducer = useReducer;
           exports.useRef = useRef;
-          exports.useState = useState;
+          exports.useState = useState2;
           exports.useSyncExternalStore = useSyncExternalStore;
           exports.useTransition = useTransition;
           exports.version = ReactVersion;
@@ -2382,9 +2382,9 @@
           if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
             __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
           }
-          var React2 = require_react();
+          var React3 = require_react();
           var Scheduler = require_scheduler();
-          var ReactSharedInternals = React2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           var suppressWarning = false;
           function setSuppressWarning(newSuppressWarning) {
             {
@@ -3989,7 +3989,7 @@
             {
               if (props.value == null) {
                 if (typeof props.children === "object" && props.children !== null) {
-                  React2.Children.forEach(props.children, function(child) {
+                  React3.Children.forEach(props.children, function(child) {
                     if (child == null) {
                       return;
                     }
@@ -4485,15 +4485,15 @@
             };
           }
           var warnValidStyle$1 = warnValidStyle;
-          function createDangerousStringForStyles(styles) {
+          function createDangerousStringForStyles(styles2) {
             {
               var serialized = "";
               var delimiter = "";
-              for (var styleName in styles) {
-                if (!styles.hasOwnProperty(styleName)) {
+              for (var styleName in styles2) {
+                if (!styles2.hasOwnProperty(styleName)) {
                   continue;
                 }
-                var styleValue = styles[styleName];
+                var styleValue = styles2[styleName];
                 if (styleValue != null) {
                   var isCustomProperty = styleName.indexOf("--") === 0;
                   serialized += delimiter + (isCustomProperty ? styleName : hyphenateStyleName(styleName)) + ":";
@@ -4504,19 +4504,19 @@
               return serialized || null;
             }
           }
-          function setValueForStyles(node, styles) {
+          function setValueForStyles(node, styles2) {
             var style2 = node.style;
-            for (var styleName in styles) {
-              if (!styles.hasOwnProperty(styleName)) {
+            for (var styleName in styles2) {
+              if (!styles2.hasOwnProperty(styleName)) {
                 continue;
               }
               var isCustomProperty = styleName.indexOf("--") === 0;
               {
                 if (!isCustomProperty) {
-                  warnValidStyle$1(styleName, styles[styleName]);
+                  warnValidStyle$1(styleName, styles2[styleName]);
                 }
               }
-              var styleValue = dangerousStyleValue(styleName, styles[styleName], isCustomProperty);
+              var styleValue = dangerousStyleValue(styleName, styles2[styleName], isCustomProperty);
               if (styleName === "float") {
                 styleName = "cssFloat";
               }
@@ -4530,9 +4530,9 @@
           function isValueEmpty(value) {
             return value == null || typeof value === "boolean" || value === "";
           }
-          function expandShorthandMap(styles) {
+          function expandShorthandMap(styles2) {
             var expanded = {};
-            for (var key in styles) {
+            for (var key in styles2) {
               var longhands = shorthandToLonghand[key] || [key];
               for (var i = 0; i < longhands.length; i++) {
                 expanded[longhands[i]] = key;
@@ -12436,7 +12436,7 @@
             }
           }
           var fakeInternalInstance = {};
-          var emptyRefsObject = new React2.Component().refs;
+          var emptyRefsObject = new React3.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23038,7 +23038,7 @@
               unmarkContainerAsRoot(container);
             }
           };
-          function createRoot2(container, options2) {
+          function createRoot(container, options2) {
             if (!isValidContainer(container)) {
               throw new Error("createRoot(...): Target container is not a DOM element.");
             }
@@ -23086,7 +23086,7 @@
             }
           }
           ReactDOMHydrationRoot.prototype.unstable_scheduleHydration = scheduleHydration;
-          function hydrateRoot(container, initialChildren, options2) {
+          function hydrateRoot2(container, initialChildren, options2) {
             if (!isValidContainer(container)) {
               throw new Error("hydrateRoot(...): Target container is not a DOM element.");
             }
@@ -23409,7 +23409,7 @@
                 error('You are importing createRoot from "react-dom" which is not supported. You should instead import it from "react-dom/client".');
               }
             }
-            return createRoot2(container, options2);
+            return createRoot(container, options2);
           }
           function hydrateRoot$1(container, initialChildren, options2) {
             {
@@ -23417,7 +23417,7 @@
                 error('You are importing hydrateRoot from "react-dom" which is not supported. You should instead import it from "react-dom/client".');
               }
             }
-            return hydrateRoot(container, initialChildren, options2);
+            return hydrateRoot2(container, initialChildren, options2);
           }
           function flushSync$1(fn) {
             {
@@ -23507,12 +23507,94 @@
     }
   });
 
-  // main.jsx
-  var import_react = __toESM(require_react());
+  // hydration.jsx
+  var import_react2 = __toESM(require_react());
   var import_client = __toESM(require_client());
-  document.body.innerHTML = '<div id="app"></div>';
-  var root = (0, import_client.createRoot)(document.getElementById("app"));
-  root.render(/* @__PURE__ */ import_react.default.createElement("h1", null, '"Hello Main File"'));
+
+  // components/game.jsx
+  var import_react = __toESM(require_react());
+  var Game = ({ name = "", id, publisher }) => {
+    const [isClient, setIsClient] = (0, import_react.useState)(false);
+    const hasExtension = /.png/.test(name);
+    const parsedName = name.replace(".png", "");
+    const gameTitle = id?.replace(" (PAL).png", "") || name;
+    const imagePath = hasExtension ? `/${parsedName} (PAL).png` : `/${name} (PAL).png`;
+    (0, import_react.useEffect)(() => {
+      setIsClient(true);
+    }, []);
+    return /* @__PURE__ */ import_react.default.createElement("div", { style: styles.container }, /* @__PURE__ */ import_react.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react.default.createElement("h1", { style: styles.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react.default.createElement("p", null, isClient ? publisher : "Publisher Not Found"), /* @__PURE__ */ import_react.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react.default.createElement("div", { style: styles.imageBackground }), /* @__PURE__ */ import_react.default.createElement("div", { style: styles.topEdge }), /* @__PURE__ */ import_react.default.createElement("div", { style: styles.bottomEdge }), /* @__PURE__ */ import_react.default.createElement(
+      "img",
+      {
+        src: id || imagePath,
+        alt: id || name,
+        style: { transform: "skewX(10deg)" }
+      }
+    ))), /* @__PURE__ */ import_react.default.createElement(
+      "button",
+      {
+        onClick: () => {
+          console.log("clicked");
+          alert("Clicked");
+        }
+      },
+      "Click me"
+    ));
+  };
+  var styles = {
+    container: {
+      display: "grid",
+      placeItems: "center",
+      width: "100%",
+      height: "100%"
+    },
+    title: {
+      fontFamily: "Monaco",
+      fontSize: "72px",
+      fontWeight: "bold",
+      letterSpacing: "0.1em",
+      color: "#251b1b",
+      textAlign: "center",
+      textShadow: "3px 3px 0 red, -3px -3px 0 aqua"
+    },
+    imageBackground: {
+      background: "black",
+      transform: "skewX(10deg)",
+      width: "100%",
+      height: "100%",
+      zIndex: "-1",
+      position: "absolute",
+      right: "-6%",
+      top: "36px"
+    },
+    topEdge: {
+      zIndex: "-1",
+      position: "absolute",
+      right: "4px",
+      top: "15px",
+      width: "0",
+      height: "0",
+      borderLeft: "30px solid transparent",
+      borderRight: "30px solid transparent",
+      borderTop: "30px solid black",
+      transform: "rotate(38deg)"
+    },
+    bottomEdge: {
+      zIndex: "-1",
+      position: "absolute",
+      left: "50px",
+      bottom: "-21px",
+      width: "0",
+      height: "0",
+      borderLeft: "31px solid transparent",
+      borderRight: "30px solid transparent",
+      borderTop: "30px solid black",
+      transform: "rotate(-143deg)"
+    }
+  };
+
+  // hydration.jsx
+  var root = document.getElementById("root");
+  (0, import_client.hydrateRoot)(root, /* @__PURE__ */ import_react2.default.createElement(Game, null));
 })();
 /*! Bundled license information:
 

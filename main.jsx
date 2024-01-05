@@ -1,6 +1,7 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
 
 document.body.innerHTML = '<div id="app"></div>';
 
 const root = createRoot(document.getElementById("app"));
-root.render(<h1>AGORA VAI!</h1>);
+root.render(<h1>"Hello Main File"</h1>);
