@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export const Game = ({ name = "", id }) => {
+export const Game = ({ name = "", id, publisher }) => {
+  const [isClient, setIsClient] = useState(false);
   const hasExtension = /.png/.test(name);
   const parsedName = name.replace(".png", "");
   const gameTitle = id?.replace(" (PAL).png", "") || name;
@@ -9,10 +10,15 @@ export const Game = ({ name = "", id }) => {
     ? `/${parsedName} (PAL).png`
     : `/${name} (PAL).png`;
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div style={styles.container}>
       <div style={{ width: "780px" }}>
         <h1 style={styles.title}>{gameTitle.toLowerCase()}</h1>
+        <p>{isClient ? publisher : "Publisher Not Found"}</p>
         <div style={{ position: "relative" }}>
           <div style={styles.imageBackground}></div>
           <div style={styles.topEdge}></div>
@@ -24,6 +30,14 @@ export const Game = ({ name = "", id }) => {
           />
         </div>
       </div>
+      <button
+        onClick={() => {
+          console.log("clicked");
+          alert("Clicked");
+        }}
+      >
+        Click me
+      </button>
     </div>
   );
 };

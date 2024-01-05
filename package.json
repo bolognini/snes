@@ -9,7 +9,9 @@
   },
   "scripts": {
     "build": "esbuild server.jsx --bundle --outfile=out.js --platform=node",
-    "build:watch": "esbuild server.jsx --bundle --watch --outfile=out.js --platform=node",
+    "build:server:watch": "esbuild server.jsx --bundle --watch --outfile=out.js --platform=node",
+    "build:client:watch": "esbuild main.jsx --bundle --watch --outfile=public/main.js",
+    "build:hydration:watch": "esbuild hydration.jsx --bundle --watch --outfile=public/hydration.js",
     "start": "yarn build && node ./out",
     "dev": "yarn build && nodemon -e js,jsx ./out.js "
   },
