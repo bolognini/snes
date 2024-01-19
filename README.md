@@ -8,7 +8,7 @@
 
 ## Description
 
-SNES was created for study purposes - The objective is to use it as a simple project example for a mentorship I'm having in my current workplace. The objective is to go back to the foundation and understand how things work under the hood by trying to replicate it from scratch. It includes mostly understanding how server and client connect with each other, and how cache, hydration, and SSR work.
+SNES was created for study purposes - The objective is to use it as a simple project example for a mentorship I'm having in my current workplace. The objective is to go back to the foundation and understand how things work under the hood by trying to replicate it from scratch. It includes mostly understanding how server and client connect with each other, and how cache, hydration, and SSR work. **Please do not expect a super beautiful project here**, this is really just a place to dump code to study what I discuss with my mentor in a mentorship program the company I work for drives.
 
 ## Project
 
@@ -29,12 +29,12 @@ cd snes
 yarn
 ```
 
-Next, please open a new terminal window. One window will listen to any changes made on JSX files that needs to be compiled, using ESBuild `--watch` listener, and the other window will listen to any changes made on the server, using the nodemon package.
+Next, please open a new terminal window. One window will listen to any changes made on JSX files that needs to be compiled, using ESBuild `--watch` listener (being used under the hood), and the other window will listen to any changes made on the server, using the nodemon package.
 
 #### First Terminal Instance
 
 ```shell
-yarn build:watch
+yarn build:all
 ```
 
 #### Second Terminal Instance
@@ -50,3 +50,4 @@ With that, in a few seconds the server can be accessed by Insomnia, Postman, cUR
 - [ESBuild](https://esbuild.github.io/) - An extremely fast bundler for the web
 - [Nodemon](https://nodemon.io/) - A monitor for any changes in the source code
 - [Express](https://expressjs.com/) - Web framework for Node.js
+- [MockAPI](https://mockapi.io/) - A simple service to create fake data for test purposes
