@@ -9,7 +9,11 @@
   },
   "scripts": {
     "build": "esbuild server.jsx --bundle --outfile=out.js --platform=node",
-    "build:watch": "esbuild server.jsx --bundle --watch --outfile=out.js --platform=node",
+    "build:server:watch": "esbuild server.jsx --bundle --watch --outfile=out.js --platform=node",
+    "build:client:watch": "esbuild main.jsx --bundle --watch --outfile=public/main.js",
+    "build:hydrationName:watch": "esbuild hydrationName.jsx --bundle --watch --outfile=public/hydrationName.js",
+    "build:hydrationId:watch": "esbuild hydrationId.jsx --bundle --watch --outfile=public/hydrationId.js",
+    "build:all": "yarn build:server:watch && yarn build:client:watch && yarn build:hydrationName:watch && yarn build:hydrationId:watch",
     "start": "yarn build && node ./out",
     "dev": "yarn build && nodemon -e js,jsx ./out.js "
   },

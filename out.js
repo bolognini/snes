@@ -1380,7 +1380,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context);
         }
-        function useState(initialState) {
+        function useState2(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1392,7 +1392,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect(create, deps) {
+        function useEffect2(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -2174,7 +2174,7 @@ var require_react_development = __commonJS({
         exports.useContext = useContext;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect;
+        exports.useEffect = useEffect2;
         exports.useId = useId;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useInsertionEffect = useInsertionEffect;
@@ -2182,7 +2182,7 @@ var require_react_development = __commonJS({
         exports.useMemo = useMemo;
         exports.useReducer = useReducer;
         exports.useRef = useRef;
-        exports.useState = useState;
+        exports.useState = useState2;
         exports.useSyncExternalStore = useSyncExternalStore;
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
@@ -9558,7 +9558,7 @@ var require_react_dom_server_legacy_node_development = __commonJS({
         function basicStateReducer(state, action) {
           return typeof action === "function" ? action(state) : action;
         }
-        function useState(initialState) {
+        function useState2(initialState) {
           {
             currentHookNameInDev = "useState";
           }
@@ -9740,7 +9740,7 @@ var require_react_dom_server_legacy_node_development = __commonJS({
           useMemo,
           useReducer,
           useRef,
-          useState,
+          useState: useState2,
           useInsertionEffect: noop,
           useLayoutEffect,
           useCallback,
@@ -14988,7 +14988,7 @@ var require_react_dom_server_node_development = __commonJS({
         function basicStateReducer(state, action) {
           return typeof action === "function" ? action(state) : action;
         }
-        function useState(initialState) {
+        function useState2(initialState) {
           {
             currentHookNameInDev = "useState";
           }
@@ -15170,7 +15170,7 @@ var require_react_dom_server_node_development = __commonJS({
           useMemo,
           useReducer,
           useRef,
-          useState,
+          useState: useState2,
           useInsertionEffect: noop,
           useLayoutEffect,
           useCallback,
@@ -38592,21 +38592,24 @@ var styles = {
 
 // components/game.jsx
 var import_react2 = __toESM(require_react());
-var Game = ({ name = "", id }) => {
+var Game = ({ name = "", id, publisher }) => {
+  const [isClient, setIsClient] = (0, import_react2.useState)(false);
+  const [showModal, setShowModal] = (0, import_react2.useState)(false);
   const hasExtension = /.png/.test(name);
   const parsedName = name.replace(".png", "");
   const gameTitle = id?.replace(" (PAL).png", "") || name;
-  console.log({ name });
-  console.log({ id });
   const imagePath = hasExtension ? `/${parsedName} (PAL).png` : `/${name} (PAL).png`;
-  return /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.container }, /* @__PURE__ */ import_react2.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react2.default.createElement("h1", { style: styles2.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react2.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.imageBackground }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.topEdge }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.bottomEdge }), /* @__PURE__ */ import_react2.default.createElement(
+  (0, import_react2.useEffect)(() => {
+    setIsClient(true);
+  }, []);
+  return /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.container }, /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.overlay(showModal) }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.modal(showModal) }, /* @__PURE__ */ import_react2.default.createElement("button", { style: styles2.closeButton, onClick: () => setShowModal(false) }, "\u2716"), "Attention! All data are fake. This is just a very simple project to serve for studies purposes! :)"), /* @__PURE__ */ import_react2.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react2.default.createElement("h1", { style: styles2.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react2.default.createElement("p", { style: styles2.publisher }, "Publisher: ", isClient ? publisher : "Publisher Not Found"), /* @__PURE__ */ import_react2.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.imageBackground }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.topEdge }), /* @__PURE__ */ import_react2.default.createElement("div", { style: styles2.bottomEdge }), /* @__PURE__ */ import_react2.default.createElement(
     "img",
     {
       src: id || imagePath,
       alt: id || name,
       style: { transform: "skewX(10deg)" }
     }
-  ))));
+  ))), /* @__PURE__ */ import_react2.default.createElement("button", { style: styles2.button, onClick: () => setShowModal(!showModal) }, "More information"));
 };
 var styles2 = {
   container: {
@@ -38623,6 +38626,12 @@ var styles2 = {
     color: "#251b1b",
     textAlign: "center",
     textShadow: "3px 3px 0 red, -3px -3px 0 aqua"
+  },
+  publisher: {
+    fontFamily: "Monaco",
+    fontSize: "18px",
+    color: "#340682",
+    textAlign: "center"
   },
   imageBackground: {
     background: "black",
@@ -38657,18 +38666,72 @@ var styles2 = {
     borderRight: "30px solid transparent",
     borderTop: "30px solid black",
     transform: "rotate(-143deg)"
+  },
+  overlay: (showModal) => ({
+    display: showModal ? "block" : "none",
+    width: "100%",
+    height: "100%",
+    margin: "auto",
+    position: "absolute",
+    zIndex: 1,
+    background: "rgb(50 50 50 / 60%)"
+  }),
+  modal: (showModal) => ({
+    display: showModal ? "block" : "none",
+    fontFamily: "sans-serif",
+    width: "300",
+    border: "1px solid gray",
+    padding: 40,
+    textAlign: "center",
+    margin: "auto",
+    position: "absolute",
+    zIndex: 2,
+    background: "white",
+    boxShadow: "4px 3px 4px 0px rgba(0, 0, 0, 0.4)",
+    lineHeight: 1.5
+  }),
+  button: {
+    border: "none",
+    padding: "16 12",
+    background: "#340682",
+    color: "white",
+    fontSize: 18,
+    cursor: "pointer"
+  },
+  closeButton: {
+    border: "none",
+    padding: 4,
+    background: "transparent",
+    fontSize: 28,
+    cursor: "pointer",
+    position: "absolute",
+    top: 10,
+    right: 10
   }
 };
 
 // server.jsx
 var server = (0, import_express.default)();
 var port = 3e3;
-server.use(import_express.default.static(__dirname + "/public"));
-server.use("/game/:name", (req, res) => {
-  res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Game, { name: req.params.name })));
-});
-server.use("/game", (req, res) => {
-  const id = req.query.id;
+var getGameListMiddleware = async (req, res, next) => {
+  const response = await fetch(
+    "https://6598072c668d248edf23f18a.mockapi.io/snesdb/games"
+  );
+  const gameListData = await response.json();
+  res.gameListData = gameListData;
+  next();
+};
+var sendGameNameMiddleware = async (req, res) => {
+  const game = (0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Game, { name: req.params.name, publisher: "" }));
+  await res.send(
+    `<html><body><div id="root">${game}</div><div id="serverData">${JSON.stringify(
+      { name: req.params.name, publisher: "" }
+    )}</div><script src="/hydrationName.js"></script></body></html>`
+  );
+};
+var sendGameIdMiddleware = async (req, res) => {
+  const queryParameterId = req.query.id;
+  const id = queryParameterId - 1 || 0;
   if (id && Number(id)) {
     const publicPath = import_path.default.join(__dirname, "/public");
     try {
@@ -38681,7 +38744,23 @@ server.use("/game", (req, res) => {
           res.redirect("/");
           return console.error(`file id doesn't exist`);
         }
-        res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Game, { id: files[id] })));
+        const gamePage = (0, import_server.renderToString)(
+          /* @__PURE__ */ import_react3.default.createElement(
+            Game,
+            {
+              id: files[id],
+              publisher: res.gameListData[id - 1].publisherName
+            }
+          )
+        );
+        res.send(
+          `<html><body><div id="root">${gamePage}</div><div id="serverData">${JSON.stringify(
+            {
+              id: files[id],
+              publisher: res.gameListData[id - 1].publisherName
+            }
+          )}</div><script src="/hydrationId.js"></script></body></html>`
+        );
       });
     } catch (error) {
       console.error(error);
@@ -38690,7 +38769,13 @@ server.use("/game", (req, res) => {
   } else {
     res.redirect("/");
   }
+};
+server.use(import_express.default.static(__dirname + "/public"));
+server.use("/client", (req, res) => {
+  res.send(`<html><body><script src="/main.js"></script></body></html>`);
 });
+server.use("/game/:name", [getGameListMiddleware, sendGameNameMiddleware]);
+server.use("/game", [getGameListMiddleware, sendGameIdMiddleware]);
 server.use("/", (_, res) => {
   res.send((0, import_server.renderToString)(/* @__PURE__ */ import_react3.default.createElement(Home, null)));
 });
