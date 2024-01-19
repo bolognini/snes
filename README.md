@@ -8,7 +8,9 @@
 
 ## Description
 
-SNES was created for study purposes - The objective is to use it as a simple project example for a mentorship I'm having in my current workplace. The objective is to go back to the foundation and understand how things work under the hood by trying to replicate it from scratch. It includes mostly understanding how server and client connect with each other, and how cache, hydration, and SSR work. **Please do not expect a super beautiful project here**, this is really just a place to dump code to study what I discuss with my mentor in a mentorship program the company I work for drives.
+SNES was created for study purposes - The objective is to use it as a simple project example for a mentorship I'm having in my current workplace. The objective is to go back to the foundation and understand how things work under the hood by trying to replicate it from scratch. It includes mostly understanding how server and client connect with each other, and how cache, hydration, and SSR work.
+
+**Please do not expect a super beautiful project here**, this is really just a place to dump code to study what I discuss with my mentor in a mentorship program the company I work for drives.
 
 ## Project
 
