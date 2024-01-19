@@ -9,46 +9,32 @@ import { Game } from "./components/game";
 
 const server = express();
 const port = 3000;
-// let cache = {};
+// [TO-DO] let cache = {};
 
 const getGameListMiddleware = async (req, res, next) => {
   const response = await fetch(
     "https://6598072c668d248edf23f18a.mockapi.io/snesdb/games",
   );
-  // cache = response;
+  // [TO-DO] cache = response;
   const gameListData = await response.json();
 
   res.gameListData = gameListData;
   next();
 };
 
-const sendGameListReponseMiddleware = async (req, res) => {
-  console.log(res.gameListData[0].publisherName);
-
-  const game = renderToString(
-    <Game
-      name={req.params.name}
-      publisher={res.gameListData[0].publisherName}
-    />,
-  );
+const sendGameNameMiddleware = async (req, res) => {
+  const game = renderToString(<Game name={req.params.name} publisher="" />);
 
   await res.send(
-    `<html><body><div id="root">${game}</div><script src="/hydration.js"></script></body></html>`,
+    `<html><body><div id="root">${game}</div><div id="serverData">${JSON.stringify(
+      { name: req.params.name, publisher: "" },
+    )}</div><script src="/hydrationName.js"></script></body></html>`,
   );
 };
-server.use(express.static(__dirname + "/public"));
 
-server.use("/client", (req, res) => {
-  res.send(`<html><body><script src="/main.js"></script></body></html>`);
-});
-
-server.use("/game/:name", [
-  getGameListMiddleware,
-  sendGameListReponseMiddleware,
-]);
-
-server.use("/game", (req, res) => {
-  const id = req.query.id;
+const sendGameIdMiddleware = async (req, res) => {
+  const queryParameterId = req.query.id;
+  const id = queryParameterId - 1 || 0;
 
   if (id && Number(id)) {
     const publicPath = path.join(__dirname, "/public");
@@ -64,7 +50,22 @@ server.use("/game", (req, res) => {
           res.redirect("/");
           return console.error(`file id doesn't exist`);
         }
-        res.send(renderToString(<Game id={files[id]} />));
+
+        const gamePage = renderToString(
+          <Game
+            id={files[id]}
+            publisher={res.gameListData[id - 1].publisherName}
+          />,
+        );
+
+        res.send(
+          `<html><body><div id="root">${gamePage}</div><div id="serverData">${JSON.stringify(
+            {
+              id: files[id],
+              publisher: res.gameListData[id - 1].publisherName,
+            },
+          )}</div><script src="/hydrationId.js"></script></body></html>`,
+        );
       });
     } catch (error) {
       console.error(error);
@@ -73,7 +74,18 @@ server.use("/game", (req, res) => {
   } else {
     res.redirect("/");
   }
+};
+
+server.use(express.static(__dirname + "/public"));
+
+server.use("/client", (req, res) => {
+  res.send(`<html><body><script src="/main.js"></script></body></html>`);
 });
+
+server.use("/game/:name", [getGameListMiddleware, sendGameNameMiddleware]);
+
+// Game rout with ID on query parameter
+server.use("/game", [getGameListMiddleware, sendGameIdMiddleware]);
 
 server.use("/", (_, res) => {
   res.send(renderToString(<Home />));

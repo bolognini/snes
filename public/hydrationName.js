@@ -23507,7 +23507,7 @@
     }
   });
 
-  // hydration.jsx
+  // hydrationName.jsx
   var import_react2 = __toESM(require_react());
   var import_client = __toESM(require_client());
 
@@ -23515,6 +23515,7 @@
   var import_react = __toESM(require_react());
   var Game = ({ name = "", id, publisher }) => {
     const [isClient, setIsClient] = (0, import_react.useState)(false);
+    const [showModal, setShowModal] = (0, import_react.useState)(false);
     const hasExtension = /.png/.test(name);
     const parsedName = name.replace(".png", "");
     const gameTitle = id?.replace(" (PAL).png", "") || name;
@@ -23522,23 +23523,14 @@
     (0, import_react.useEffect)(() => {
       setIsClient(true);
     }, []);
-    return /* @__PURE__ */ import_react.default.createElement("div", { style: styles.container }, /* @__PURE__ */ import_react.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react.default.createElement("h1", { style: styles.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react.default.createElement("p", null, isClient ? publisher : "Publisher Not Found"), /* @__PURE__ */ import_react.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react.default.createElement("div", { style: styles.imageBackground }), /* @__PURE__ */ import_react.default.createElement("div", { style: styles.topEdge }), /* @__PURE__ */ import_react.default.createElement("div", { style: styles.bottomEdge }), /* @__PURE__ */ import_react.default.createElement(
+    return /* @__PURE__ */ import_react.default.createElement("div", { style: styles.container }, /* @__PURE__ */ import_react.default.createElement("div", { style: styles.overlay(showModal) }), /* @__PURE__ */ import_react.default.createElement("div", { style: styles.modal(showModal) }, /* @__PURE__ */ import_react.default.createElement("button", { style: styles.closeButton, onClick: () => setShowModal(false) }, "\u2716"), "Attention! All data are fake. This is just a very simple project to serve for studies purposes! :)"), /* @__PURE__ */ import_react.default.createElement("div", { style: { width: "780px" } }, /* @__PURE__ */ import_react.default.createElement("h1", { style: styles.title }, gameTitle.toLowerCase()), /* @__PURE__ */ import_react.default.createElement("p", { style: styles.publisher }, "Publisher: ", isClient ? publisher : "Publisher Not Found"), /* @__PURE__ */ import_react.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react.default.createElement("div", { style: styles.imageBackground }), /* @__PURE__ */ import_react.default.createElement("div", { style: styles.topEdge }), /* @__PURE__ */ import_react.default.createElement("div", { style: styles.bottomEdge }), /* @__PURE__ */ import_react.default.createElement(
       "img",
       {
         src: id || imagePath,
         alt: id || name,
         style: { transform: "skewX(10deg)" }
       }
-    ))), /* @__PURE__ */ import_react.default.createElement(
-      "button",
-      {
-        onClick: () => {
-          console.log("clicked");
-          alert("Clicked");
-        }
-      },
-      "Click me"
-    ));
+    ))), /* @__PURE__ */ import_react.default.createElement("button", { style: styles.button, onClick: () => setShowModal(!showModal) }, "More information"));
   };
   var styles = {
     container: {
@@ -23555,6 +23547,12 @@
       color: "#251b1b",
       textAlign: "center",
       textShadow: "3px 3px 0 red, -3px -3px 0 aqua"
+    },
+    publisher: {
+      fontFamily: "Monaco",
+      fontSize: "18px",
+      color: "#340682",
+      textAlign: "center"
     },
     imageBackground: {
       background: "black",
@@ -23589,12 +23587,52 @@
       borderRight: "30px solid transparent",
       borderTop: "30px solid black",
       transform: "rotate(-143deg)"
+    },
+    overlay: (showModal) => ({
+      display: showModal ? "block" : "none",
+      width: "100%",
+      height: "100%",
+      margin: "auto",
+      position: "absolute",
+      zIndex: 1,
+      background: "rgb(50 50 50 / 60%)"
+    }),
+    modal: (showModal) => ({
+      display: showModal ? "block" : "none",
+      fontFamily: "sans-serif",
+      width: "300",
+      border: "1px solid gray",
+      padding: 40,
+      textAlign: "center",
+      margin: "auto",
+      position: "absolute",
+      zIndex: 2,
+      background: "white",
+      boxShadow: "4px 3px 4px 0px rgba(0, 0, 0, 0.4)",
+      lineHeight: 1.5
+    }),
+    button: {
+      border: "none",
+      padding: "16 12",
+      background: "#340682",
+      color: "white",
+      fontSize: 18,
+      cursor: "pointer"
+    },
+    closeButton: {
+      border: "none",
+      padding: 4,
+      background: "transparent",
+      fontSize: 28,
+      cursor: "pointer",
+      position: "absolute",
+      top: 10,
+      right: 10
     }
   };
 
-  // hydration.jsx
+  // hydrationName.jsx
   var serverData = JSON.parse(document.getElementById("serverData").innerHTML);
-  console.log({ serverData });
   var root = document.getElementById("root");
   (0, import_client.hydrateRoot)(root, /* @__PURE__ */ import_react2.default.createElement(Game, { ...serverData }));
 })();
